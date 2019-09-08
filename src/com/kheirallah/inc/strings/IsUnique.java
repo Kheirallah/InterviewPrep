@@ -16,7 +16,7 @@ Example:
     Input: "aabb"
     Output: false
  */
-public class isUnique {
+public class IsUnique {
 
     //By using an additional data structure, a HashSet is great for this purpose with constant lookup times
     //Time complexity O(n), Space complexity O(n)

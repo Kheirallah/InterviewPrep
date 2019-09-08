@@ -14,7 +14,7 @@ Given two strings, write a method to check if one is a permutation of the other
     Input: "dog" "wof"
     Output: false
  */
-public class checkPermutation {
+public class CheckPermutation {
 
     //Time Complexity O(N)
     //Space complexity O(N), for positions tracking array
