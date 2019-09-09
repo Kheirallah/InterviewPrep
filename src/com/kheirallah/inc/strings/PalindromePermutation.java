@@ -19,12 +19,14 @@ public class PalindromePermutation {
     //Space complexity O(N) in order to maintain the character table
     private static boolean palindromePermutation(String input) {
         int[] table = new int[26];
+        //each value gets counted on an alphabet table, for each letter appearance we increment by one
         for (char c : input.toCharArray()) {
             int x = getCharNumber(c);
             if (x != -1) {
                 table[x]++;
             }
         }
+        //in a permutation, we can only have one value which has an odd amount of apperances, if we see more than one it cannot be a permutation
         boolean foundOdd = false;
         for (int count : table) {
             if (count % 2 == 1) {
