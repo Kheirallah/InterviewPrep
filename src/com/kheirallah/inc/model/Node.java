@@ -1,4 +1,4 @@
-package com.kheirallah.inc.linkedlists;
+package com.kheirallah.inc.model;
 
 public class Node {
     public int value;

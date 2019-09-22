@@ -11,6 +11,8 @@ Write code to remove duplicates from an unsorted linked list
     Output: 1 -> 2 -> 4 -> 5 ->
  */
 
+import com.kheirallah.inc.model.Node;
+
 import java.util.HashSet;
 import java.util.Set;
 

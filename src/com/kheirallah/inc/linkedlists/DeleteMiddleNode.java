@@ -11,6 +11,8 @@ a singly linked list, given only access to that node.
     Output: 1 -> 3 -> 6
  */
 
+import com.kheirallah.inc.model.Node;
+
 public class DeleteMiddleNode {
 
     public static void main(String args[]) {
