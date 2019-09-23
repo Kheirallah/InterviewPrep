@@ -9,6 +9,10 @@ public class Node {
         next = null;
     }
 
+    public Node() {
+
+    }
+
     public void appendToTail(int val) {
         Node end = new Node(val);
         Node n = this;
