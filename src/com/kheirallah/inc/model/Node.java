@@ -22,6 +22,14 @@ public class Node {
         n.next = end;
     }
 
+    public void appendToTail(Node val) {
+        Node n = this;
+        while (n.next != null) {
+            n = n.next;
+        }
+        n.next = val;
+    }
+
     public void print() {
         Node n = this;
         while (n != null) {
