@@ -25,7 +25,7 @@ public class ReturnKthToLast {
     }
 
     //Time Complexity O(N) iterate through the list once
-    //Space Complexity O(N) due to recursive calls
+    //Space Complexity O(1)
     private static int kthToTheLast(Node head, int pos) {
         if (head == null) {
             return 0;

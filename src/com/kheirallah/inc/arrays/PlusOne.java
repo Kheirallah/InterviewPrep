@@ -36,17 +36,16 @@ public class PlusOne {
         } else {
             int i = digits.length - 1;
             while (digits[i] == 9) {
-                if (i != 0) {
-                    digits[i] = 0;
-                    i--;
-                } else {
-                    int[] newDigits = new int[digits.length + 1];
-                    newDigits[0] = 1;
-                    return newDigits;
+                if (i == 0) {
+                    int[] newArr = new int[digits.length + 1];
+                    newArr[0] = 1;
                 }
+                digits[i] = 0;
+                i--;
             }
             digits[i] += 1;
             return digits;
         }
+
     }
 }

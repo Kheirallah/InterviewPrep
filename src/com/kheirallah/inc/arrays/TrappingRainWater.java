@@ -29,28 +29,23 @@ public class TrappingRainWater {
             return 0;
         }
 
-        //left[i] contains height of the tallest bar to the left of the ith bar including itself
-        int left[] = new int[length];
-
-        //right[i] contains height of the tallest bar to the right of the ith bar including itself
-        int right[] = new int[length];
+        int[] left = new int[length];
+        int[] right = new int[length];
 
         left[0] = input[0];
+        right[length - 1] = input[length - 1];
+
         for (int i = 1; i < length; i++) {
             left[i] = Math.max(left[i - 1], input[i]);
         }
 
-        right[length - 1] = input[length - 1];
         for (int i = length - 2; i >= 0; i--) {
-            right[i] = Math.max(input[i], right[i + 1]);
+            right[i] = Math.max(right[i + 1], input[i]);
         }
 
-        // Calculate the accumulated water element by element consider the amount of water on ith bar, the amount of water accumulated on this particular
-        // bar will be equal to min(left[i], right[i]) - input[i]
         for (int i = 0; i < length; i++) {
-            water += Math.min(left[i], right[i]) - input[i];
+            water += Math.min(right[i], left[i]) - input[i];
         }
-
         return water;
     }
 

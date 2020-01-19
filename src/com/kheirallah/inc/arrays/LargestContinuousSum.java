@@ -24,11 +24,12 @@ public class LargestContinuousSum {
         int localMax = 0;
 
         for (int value : input) {
-            localMax = Math.max(value, value + localMax);
+            localMax = Math.max(localMax, value + localMax);
             if (localMax > globalMax) {
                 globalMax = localMax;
             }
         }
+
         return globalMax;
     }
 }

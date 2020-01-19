@@ -39,24 +39,21 @@ public class ValidParenthesis {
 
     //Time Complexity O(n)
     //Space Complexity O(n), for new stack
+    //{[]}
+    //
     private static boolean isValidParenthesis(String input) {
-        if (input.isEmpty()) {
-            return true;
-        }
-
-        Stack<Character> s = new Stack<>();
-
+        Stack<Character> characters = new Stack<>();
         for (char c : input.toCharArray()) {
             if (c == '{') {
-                s.push('}');
-            } else if (c == '(') {
-                s.push(')');
+                characters.push('}');
             } else if (c == '[') {
-                s.push(']');
-            } else if (s.isEmpty() || s.pop() != c) {
+                characters.push(']');
+            } else if (c == '(') {
+                characters.push(')');
+            } else if (characters.isEmpty() || characters.pop() != c) {
                 return false;
             }
         }
-        return s.isEmpty();
+        return characters.isEmpty();
     }
 }
