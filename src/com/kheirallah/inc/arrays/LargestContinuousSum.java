@@ -20,16 +20,12 @@ public class LargestContinuousSum {
     //Time complexity O(n)
     //Space complexity O(1)
     private static int maxSubArraySum(int[] input) {
-        int globalMax = Integer.MIN_VALUE;
-        int localMax = 0;
-
-        for (int value : input) {
-            localMax = Math.max(localMax, value + localMax);
-            if (localMax > globalMax) {
-                globalMax = localMax;
-            }
+        int globalMax = input[0];
+        int localMax = input[0];
+        for (int i = 1; i < input.length; i++) {
+            localMax = Math.max(input[i], input[i] + localMax);
+            globalMax = Math.max(globalMax, localMax);
         }
-
         return globalMax;
     }
 }
