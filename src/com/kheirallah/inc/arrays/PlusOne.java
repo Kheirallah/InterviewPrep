@@ -21,7 +21,7 @@ Example 2:
 public class PlusOne {
 
     public static void main(String[] args) {
-        int[] input = {4, 3, 2, 1};
+        int[] input = {9};
         int[] output = plusOne(input);
         for (int value : output) {
             System.out.print(value + " ");
@@ -39,6 +39,7 @@ public class PlusOne {
                 if (i == 0) {
                     int[] newArr = new int[digits.length + 1];
                     newArr[0] = 1;
+                    return newArr;
                 }
                 digits[i] = 0;
                 i--;
