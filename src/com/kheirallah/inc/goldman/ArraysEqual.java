@@ -6,8 +6,8 @@ import java.util.Map;
 public class ArraysEqual {
 
     public static void main(String[] args) {
-        int arr1[] = {3, 5, 2, 5, 2};
-        int arr2[] = {2, 3, 5, 5, 2};
+        int[] arr1 = {3, 5, 2, 5, 2};
+        int[] arr2 = {2, 3, 5, 5, 2};
 
         System.out.println(isEqual(arr1, arr2));
     }

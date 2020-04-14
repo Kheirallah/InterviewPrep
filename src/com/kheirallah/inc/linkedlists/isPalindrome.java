@@ -13,7 +13,7 @@ import com.kheirallah.inc.model.Node;
 
 public class isPalindrome {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Node head = new Node(1);
         head.appendToTail(2);
         head.appendToTail(1);

@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class RemoveDups {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Node head = new Node(1);
         head.appendToTail(2);
         head.appendToTail(2);

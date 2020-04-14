@@ -12,7 +12,7 @@ Write an algorithm such that if an element in an MxN matrix is 0, its entire row
 public class ZeroMatrix {
 
     public static void main(String[] args) {
-        int mat[][] =
+        int[][] mat =
                 {
                         {1, 2, 3, 4},
                         {5, 6, 0, 8},

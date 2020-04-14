@@ -9,10 +9,6 @@ Describe how you could use a single array to implement 3 stacks
 
 public class SingleArrayThreeStacks {
 
-    public static void main(String args[]) {
-
-    }
-
     class FixedMultiStack {
         private int numberOfStacks = 3;
         private int stackCapacity;

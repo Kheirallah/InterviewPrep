@@ -15,7 +15,7 @@ import com.kheirallah.inc.model.Node;
 
 public class SumLists {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Node head = new Node(7);
         head.appendToTail(1);
         head.appendToTail(6);
@@ -50,8 +50,7 @@ public class SumLists {
         result.value = value % 10;
 
         if (listOne != null || listTwo != null) {
-            Node more = sumLists(listOne == null ? null : listOne.next, listTwo == null ? null : listTwo.next, value >= 10 ? 1 : 0);
-            result.next = more;
+            result.next = sumLists(listOne == null ? null : listOne.next, listTwo == null ? null : listTwo.next, value >= 10 ? 1 : 0);
         }
 
         return result;

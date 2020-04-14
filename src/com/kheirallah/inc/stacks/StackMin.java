@@ -19,10 +19,6 @@ import java.util.Stack;
 
 public class StackMin extends Stack<StackMin.NodeWithMin> {
 
-    public static void main(String args[]) {
-
-    }
-
     public void push(int value) {
         int newMin = Math.min(value, min());
         super.push(new NodeWithMin(value, newMin));

@@ -13,7 +13,7 @@ Can you do this in place?
 public class RotateMatrix {
 
     public static void main(String[] args) {
-        int mat[][] =
+        int[][] mat =
                 {
                         {1, 2, 3, 4},
                         {5, 6, 7, 8},
@@ -39,17 +39,16 @@ public class RotateMatrix {
     private static boolean rotateMatrix(int[][] matrix) {
         if (matrix.length == 0 || matrix.length != matrix[0].length) return false;
         for (int layer = 0; layer < matrix.length / 2; layer++) {
-            int first = layer;
             int last = matrix.length - 1 - layer;
-            for (int i = first; i < last; i++) {
-                int offset = i - first;
-                int top = matrix[first][i];
+            for (int i = layer; i < last; i++) {
+                int offset = i - layer;
+                int top = matrix[layer][i];
 
                 //left -> top
-                matrix[first][i] = matrix[last - offset][first];
+                matrix[layer][i] = matrix[last - offset][layer];
 
                 //bottom -> left
-                matrix[last - offset][first] = matrix[last][last - offset];
+                matrix[last - offset][layer] = matrix[last][last - offset];
 
                 //right -> bottom
                 matrix[last][last - offset] = matrix[i][last];

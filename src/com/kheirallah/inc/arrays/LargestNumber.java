@@ -16,7 +16,6 @@ Note: The result may be very large, so you need to return a string instead of an
  */
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class LargestNumber {
 
@@ -34,14 +33,11 @@ public class LargestNumber {
             asStrs[i] = String.valueOf(input[i]);
         }
 
-        Arrays.sort(asStrs, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                String o1o2 = o1 + o2;
-                String o2o1 = o2 + o1;
+        Arrays.sort(asStrs, (o1, o2) -> {
+            String o1o2 = o1 + o2;
+            String o2o1 = o2 + o1;
 
-                return o2o1.compareTo(o1o2);
-            }
+            return o2o1.compareTo(o1o2);
         });
 
         for (String value : asStrs) {

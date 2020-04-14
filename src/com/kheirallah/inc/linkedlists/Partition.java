@@ -15,7 +15,7 @@ import com.kheirallah.inc.model.Node;
 
 public class Partition {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Node head = new Node(3);
         head.appendToTail(5);
         head.appendToTail(8);

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArraysWaveForm {
 
     public static void main(String[] args) {
-        int arr[] = {10, 90, 49, 2, 1, 5, 23};
+        int[] arr = {10, 90, 49, 2, 1, 5, 23};
         makeEfficientWave(arr);
         for (int value : arr) {
             System.out.println(value);
