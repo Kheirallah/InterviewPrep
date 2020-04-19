@@ -11,21 +11,24 @@ that the 1's digit is a the head of the list. Write a function that adds the two
     Output: 2 -> 1 -> 9. That is, 912
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class SumLists {
 
     public static void main(String[] args) {
         Node head = new Node(7);
-        head.appendToTail(1);
-        head.appendToTail(6);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(1);
+        list.appendToTail(6);
         Node secondHead = new Node(5);
-        secondHead.appendToTail(9);
-        secondHead.appendToTail(2);
-        head.print();
+        LinkedList list2 = new LinkedList(secondHead);
+        list2.appendToTail(9);
+        list2.appendToTail(2);
+        list.print();
         System.out.println("+");
-        secondHead.print();
-        Node sum = sumLists(head, secondHead, 0);
+        list2.print();
+        LinkedList sum = new LinkedList(sumLists(head, secondHead, 0));
         sum.print();
     }
 

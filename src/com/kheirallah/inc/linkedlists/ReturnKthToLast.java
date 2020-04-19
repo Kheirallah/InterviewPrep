@@ -10,17 +10,19 @@ Implement an algorithm to find the kth to last element of a singly linked list
     Output: 6
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class ReturnKthToLast {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(3);
-        head.appendToTail(6);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(3);
+        list.appendToTail(6);
         int position = 2;
-        head.print();
+        list.print();
         kthToTheLast(head, position);
     }
 

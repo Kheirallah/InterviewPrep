@@ -11,6 +11,7 @@ Write code to remove duplicates from an unsorted linked list
     Output: 1 -> 2 -> 4 -> 5 ->
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 import java.util.HashSet;
@@ -20,15 +21,16 @@ public class RemoveDups {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(2);
-        head.appendToTail(2);
-        head.appendToTail(4);
-        head.appendToTail(5);
-        head.print();
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(2);
+        list.appendToTail(2);
+        list.appendToTail(4);
+        list.appendToTail(5);
+        list.print();
         removeDups(head);
         //removeDupsInPlace(head);
-        head.print();
+        list.print();
     }
 
     //Time Complexity O(N)

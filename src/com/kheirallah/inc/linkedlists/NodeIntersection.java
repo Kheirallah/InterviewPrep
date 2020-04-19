@@ -14,27 +14,31 @@ That is, if the kth node of the first linked list is the exact same node (by ref
     Output: Node with value of 7
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class NodeIntersection {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(5);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(5);
 
         Node headTwo = new Node(3);
-        headTwo.appendToTail(4);
+        LinkedList list2 = new LinkedList(headTwo);
+        list2.appendToTail(4);
 
         Node headThree = new Node(7);
-        headThree.appendToTail(9);
-        headThree.appendToTail(15);
+        LinkedList list3 = new LinkedList(headThree);
+        list3.appendToTail(9);
+        list3.appendToTail(15);
 
-        headTwo.appendToTail(headThree);
-        head.appendToTail(headThree);
+        list2.appendToTail(headThree);
+        list.appendToTail(headThree);
 
-        head.print();
-        headTwo.print();
+        list.print();
+        list2.print();
 
         System.out.println(findIntersection(head, headTwo).value);
     }

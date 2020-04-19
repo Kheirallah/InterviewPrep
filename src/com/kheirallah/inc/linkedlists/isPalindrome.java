@@ -9,15 +9,17 @@ Implement a function to check if a linked list is a palindrome
     Output: true
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class isPalindrome {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(1);
-        head.print();
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(1);
+        list.print();
         System.out.println(isPalindrome(head));
     }
 

@@ -11,19 +11,21 @@ a singly linked list, given only access to that node.
     Output: 1 -> 3 -> 6
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class DeleteMiddleNode {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(3);
-        head.appendToTail(6);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(3);
+        list.appendToTail(6);
         Node middle = head.next;
-        head.print();
+        list.print();
         System.out.println(deleteMiddleNode(middle));
-        head.print();
+        list.print();
     }
 
     //Time Complexity O(1) we are given the node already so no comparisons need to be made

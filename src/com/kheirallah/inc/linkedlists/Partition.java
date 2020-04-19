@@ -11,22 +11,24 @@ partition element x can appear anywhere in the "right partition"; it does not ne
     Output: 1 -> 2 -> 3 -> 5 -> 8 -> 5 -> 10
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class Partition {
 
     public static void main(String[] args) {
         Node head = new Node(3);
-        head.appendToTail(5);
-        head.appendToTail(8);
-        head.appendToTail(5);
-        head.appendToTail(10);
-        head.appendToTail(2);
-        head.appendToTail(1);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(5);
+        list.appendToTail(8);
+        list.appendToTail(5);
+        list.appendToTail(10);
+        list.appendToTail(2);
+        list.appendToTail(1);
         int partition = 5;
-        head.print();
-        head = partition(head, partition);
-        head.print();
+        list.print();
+        list = new LinkedList(partition(head, partition));
+        list.print();
     }
 
     //Time Complexity O(N) iterate through the list
