@@ -12,16 +12,18 @@ Given a circular linked list, implement an algorithm that returns the node at th
     Output: 2
  */
 
+import com.kheirallah.inc.model.LinkedList;
 import com.kheirallah.inc.model.Node;
 
 public class LoopDetection {
 
     public static void main(String[] args) {
         Node head = new Node(1);
-        head.appendToTail(2);
-        head.appendToTail(3);
-        head.appendToTail(4);
-        head.appendToTail(head.next);
+        LinkedList list = new LinkedList(head);
+        list.appendToTail(2);
+        list.appendToTail(3);
+        list.appendToTail(4);
+        list.appendToTail(head.next);
         System.out.println(findLoop(head).value);
     }
 
