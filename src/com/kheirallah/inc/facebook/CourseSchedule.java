@@ -1,4 +1,4 @@
-package com.kheirallah.inc.graph;
+package com.kheirallah.inc.facebook;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -29,29 +29,34 @@ public class CourseSchedule {
     }
 
     private static boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[][] matrix = new int[numCourses][numCourses];
-        int[] indegree = new int[numCourses];
+        if (numCourses == 0 || prerequisites.length == 0) return true;
 
+        //counter for number of prerequisites
+        int[] pCounter = new int[numCourses];
         for (int i = 0; i < prerequisites.length; i++) {
-            int ready = prerequisites[i][0];
-            int pre = prerequisites[i][1];
-            if (matrix[pre][ready] == 0) indegree[ready]++; //duplicate case
-            matrix[pre][ready] = 1;
+            pCounter[prerequisites[i][0]]++;
         }
 
-        int count = 0;
-
         Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) if (indegree[i] == 0) queue.offer(i);
+        for (int i = 0; i < numCourses; i++) {
+            if (pCounter[i] == 0) queue.add(i);
+        }
+
+        int count = queue.size(); //courses with no prerequisites go in the queue
+
         while (!queue.isEmpty()) {
-            int course = queue.poll();
-            count++;
-            for (int i = 0; i < numCourses; i++) {
-                if (matrix[course][i] != 0) {
-                    if (--indegree[i] == 0) queue.offer(i);
+            int val = queue.poll();
+            for (int i = 0; i < prerequisites.length; i++) {
+                if (prerequisites[i][1] == val) {
+                    pCounter[prerequisites[i][0]]--;
+                    if (pCounter[prerequisites[i][0]] == 0) {
+                        count++;
+                        queue.add(prerequisites[i][0]);
+                    }
                 }
             }
         }
+
         return count == numCourses;
     }
 }
