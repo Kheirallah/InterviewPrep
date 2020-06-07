@@ -1,4 +1,4 @@
-package com.kheirallah.inc.google;
+package com.kheirallah.inc.google.oa;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +25,7 @@ Every email consists of a local name and a domain name, separated by the @ sign.
         Local names do not start with a '+' character.
  */
 public class UniqueEmailAddresses {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println(numUniqueEmails(new String[]{"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"}));
     }
 
@@ -55,7 +55,7 @@ public class UniqueEmailAddresses {
 
     //LeetCode solution
     public int numUniqueEmailsLeetCode(String[] emails) {
-        Set<String> seen = new HashSet();
+        Set<String> seen = new HashSet<>();
         for (String email : emails) {
             int i = email.indexOf('@');
             String local = email.substring(0, i);
